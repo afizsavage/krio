@@ -2,10 +2,16 @@ import React, { useRef, useEffect } from 'react';
 
 type Props = {
   activeSearch: boolean;
+  searchValue: string;
+  setsearchValue: any;
 };
 
-const SearchBar = ({ activeSearch }: Props) => {
+const SearchBar = ({ activeSearch, searchValue, setsearchValue }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleUserInput = (e: any) => {
+    setsearchValue(e.target.value);
+  };
 
   useEffect(() => {
     if (inputRef.current && activeSearch) {
@@ -15,11 +21,12 @@ const SearchBar = ({ activeSearch }: Props) => {
 
   return (
     <input
-      ref={inputRef}
       className="h-full text-gray-700 w-80 outline-none"
-      type="text"
       placeholder="Search for a krio word"
-      autoFocus={true}
+      ref={inputRef}
+      type="text"
+      value={searchValue}
+      onChange={handleUserInput}
     />
   );
 };

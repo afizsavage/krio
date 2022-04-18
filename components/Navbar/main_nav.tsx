@@ -8,6 +8,7 @@ import RightNav from './right_nav';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSearch, setActiveSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   return (
     <header role="banner" className="header">
@@ -18,10 +19,15 @@ const Navbar = () => {
             activeSearch={activeSearch}
             setMenuOpen={setMenuOpen}
           />
-          <LeftNav activeSearch={activeSearch} />
+          <LeftNav
+            activeSearch={activeSearch}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
           <RightNav
             activeSearch={activeSearch}
             setActiveSearch={setActiveSearch}
+            setSearchValue={setSearchValue}
           />
         </div>
       </div>

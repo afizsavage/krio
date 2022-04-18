@@ -1,14 +1,22 @@
+import { useState } from 'react';
+
 import { BiSearch } from 'react-icons/bi';
 import { IoMdClose } from 'react-icons/io';
 
 type Props = {
   activeSearch: boolean;
   setActiveSearch: (e: boolean) => void;
+  setSearchValue: (e: any) => void;
 };
 
-const RightNav = ({ activeSearch, setActiveSearch }: Props) => {
+const RightNav = ({ activeSearch, setActiveSearch, setSearchValue }: Props) => {
+  const deactivateSearch = () => {
+    setActiveSearch(false);
+    setSearchValue('');
+  };
+
   const toggleSearch = () => {
-    activeSearch === false ? setActiveSearch(true) : setActiveSearch(false);
+    activeSearch === false ? setActiveSearch(true) : deactivateSearch();
   };
 
   return (
