@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import MenuButton from './menu_button';
 import MobileNav from './mobile_nav';
-
-// import LeftNavProps from './leftNavProps';
-// import RightNavProps from './rightNavProps';
-// import ToggleMobileNav from './toggleMobileNav';
+import RightNav from './right_nav';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,8 +32,7 @@ const Navbar = () => {
       <div className="lg:mx-auto z-40 w-auto">
         <div className="relative bg-white md:bg-transparent z-50 flex items-center justify-between h-16 md:h-18 lg:h-20 w-full">
           <MenuButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          {/* <LeftNavProps />
-          <RightNavProps /> */}
+          <RightNav />
         </div>
       </div>
       <MobileNav menuOpen={menuOpen} />
