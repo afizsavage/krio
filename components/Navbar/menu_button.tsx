@@ -1,13 +1,13 @@
 import React from 'react';
+import { BiSearch } from 'react-icons/bi';
 
 type Props = {
   menuOpen: boolean;
+  activeSearch: boolean;
   setMenuOpen: (e: boolean) => void;
 };
 
-// button to close and open mobile menu
-const MenuButton = ({ menuOpen, setMenuOpen }: Props) => {
-  // toggle open and close state
+const MenuButton = ({ menuOpen, activeSearch, setMenuOpen }: Props) => {
   const toggleMenu = () => {
     menuOpen === false ? setMenuOpen(true) : setMenuOpen(false);
   };
@@ -17,7 +17,11 @@ const MenuButton = ({ menuOpen, setMenuOpen }: Props) => {
       <button
         id="menuBtn"
         onClick={toggleMenu}
-        className="z-50 text-gray-400 focus:outline-none w-10 h-10 relative"
+        className={
+          activeSearch
+            ? 'hidden'
+            : 'z-50 text-gray-400 focus:outline-none w-10 h-10 relative'
+        }
         aria-expanded="false"
       >
         <span className="sr-only">Open and close main menu</span>
@@ -40,6 +44,11 @@ const MenuButton = ({ menuOpen, setMenuOpen }: Props) => {
           ></span>
         </div>
       </button>
+      {activeSearch && (
+        <button className="cursor-default z-50 text-gray-400 focus:outline-none w-10 h-10 relative flex justify-center items-center">
+          <BiSearch className=" w-6 h-6 text-gray-400" />
+        </button>
+      )}
     </div>
   );
 };

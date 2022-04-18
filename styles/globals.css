@@ -4,7 +4,7 @@
 
 @layer components {
   .header {
-    @apply sticky text-white lg:fixed top-0 z-40 bg-transparent h-auto md:px-8 lg:px-20 w-full border-transparent;
+    @apply sticky text-white top-0 z-40 h-auto md:px-8 lg:px-20 w-full border-transparent;
   }
 
   .tMBtn {
