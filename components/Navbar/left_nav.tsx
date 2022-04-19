@@ -1,26 +1,26 @@
-import SearchBar from './search_bar';
+import React from 'react';
+import { BiSearch } from 'react-icons/bi';
+import MenuButton from './menu_button';
 
 type Props = {
+  menuOpen: boolean;
   activeSearch: boolean;
-  searchValue: string;
-  setSearchValue: any;
+  setMenuOpen: (e: boolean) => void;
 };
 
-const LeftNav = ({ activeSearch, searchValue, setSearchValue }: Props) => {
+const LeftNav = ({ menuOpen, activeSearch, setMenuOpen }: Props) => {
   return (
-    <div className="flex-1 h-full w-full flex items-center justify-center">
-      {!activeSearch && <span className="text-gray-800">Logo</span>}
-      <div
-        className={
-          activeSearch ? 'flex-shrink-0 h-full flex items-center' : 'hidden'
-        }
-      >
-        <SearchBar
-          searchValue={searchValue}
-          activeSearch={activeSearch}
-          setsearchValue={setSearchValue}
-        />
-      </div>
+    <div className="tMBWrapper ">
+      <MenuButton
+        activeSearch={activeSearch}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
+      {activeSearch && (
+        <button className="cursor-default z-50 text-gray-400 focus:outline-none w-10 h-10 relative flex justify-center items-center">
+          <BiSearch className=" w-6 h-6 text-gray-400" />
+        </button>
+      )}
     </div>
   );
 };
