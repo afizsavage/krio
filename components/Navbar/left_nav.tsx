@@ -3,7 +3,7 @@ import SearchBar from './search_bar';
 type Props = {
   activeSearch: boolean;
   searchValue: string;
-  setSearchValue: () => void;
+  setSearchValue: any;
 };
 
 const LeftNav = ({ activeSearch, searchValue, setSearchValue }: Props) => {
