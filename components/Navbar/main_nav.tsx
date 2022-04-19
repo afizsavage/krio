@@ -18,6 +18,7 @@ const Navbar = () => {
             menuOpen={menuOpen}
             activeSearch={activeSearch}
             setMenuOpen={setMenuOpen}
+            setSearchValue={setSearchValue}
           />
           <CenterNav
             activeSearch={activeSearch}

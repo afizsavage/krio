@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 type Props = {
   activeSearch: boolean;
   searchValue: string;
-  setsearchValue: any;
+  setsearchValue: (e: string) => void;
 };
 
 const SearchBar = ({ activeSearch, searchValue, setsearchValue }: Props) => {

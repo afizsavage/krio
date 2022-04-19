@@ -1,12 +1,10 @@
-import { useState } from 'react';
-
 import { BiSearch } from 'react-icons/bi';
 import { IoMdClose } from 'react-icons/io';
 
 type Props = {
   activeSearch: boolean;
   setActiveSearch: (e: boolean) => void;
-  setSearchValue: (e: any) => void;
+  setSearchValue: (e: string) => void;
 };
 
 const RightNav = ({ activeSearch, setActiveSearch, setSearchValue }: Props) => {

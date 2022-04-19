@@ -6,9 +6,17 @@ type Props = {
   menuOpen: boolean;
   activeSearch: boolean;
   setMenuOpen: (e: boolean) => void;
+  setSearchValue: (e: string) => void;
 };
 
-const LeftNav = ({ menuOpen, activeSearch, setMenuOpen }: Props) => {
+const LeftNav = ({
+  menuOpen,
+  activeSearch,
+  setMenuOpen,
+  setSearchValue,
+}: Props) => {
+  const clearInputField = () => setSearchValue('');
+
   return (
     <div className="tMBWrapper ">
       <MenuButton
@@ -17,7 +25,10 @@ const LeftNav = ({ menuOpen, activeSearch, setMenuOpen }: Props) => {
         setMenuOpen={setMenuOpen}
       />
       {activeSearch && (
-        <button className="cursor-default z-50 text-gray-400 focus:outline-none w-10 h-10 relative flex justify-center items-center">
+        <button
+          onClick={clearInputField}
+          className="cursor-default z-50 text-gray-400 focus:outline-none w-10 h-10 relative flex justify-center items-center"
+        >
           <BiSearch className=" w-6 h-6 text-gray-400" />
         </button>
       )}
