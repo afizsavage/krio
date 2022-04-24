@@ -18,21 +18,27 @@ const Navbar = () => {
             menuOpen={menuOpen}
             activeSearch={activeSearch}
             setMenuOpen={setMenuOpen}
-            setSearchValue={setSearchValue}
+            setsearchValue={setSearchValue}
           />
           <CenterNav
             activeSearch={activeSearch}
             searchValue={searchValue}
-            setSearchValue={setSearchValue}
+            setsearchValue={setSearchValue}
           />
           <RightNav
+            menuOpen={menuOpen}
             activeSearch={activeSearch}
             setActiveSearch={setActiveSearch}
             setSearchValue={setSearchValue}
           />
         </div>
       </div>
-      <MobileNav menuOpen={menuOpen} />
+      <MobileNav
+        menuOpen={menuOpen}
+        activeSearch={activeSearch}
+        searchValue={searchValue}
+        setsearchValue={setSearchValue}
+      />
     </header>
   );
 };

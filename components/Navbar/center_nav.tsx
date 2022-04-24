@@ -1,12 +1,11 @@
 import SearchBar from './search_bar';
+import { SearchType } from './types';
 
-type Props = {
-  activeSearch: boolean;
-  searchValue: string;
-  setSearchValue: (e: string) => void;
-};
-
-const CenterNav = ({ activeSearch, searchValue, setSearchValue }: Props) => {
+const CenterNav = ({
+  activeSearch,
+  searchValue,
+  setsearchValue,
+}: SearchType) => {
   return (
     <div className="flex-1 h-full w-full flex items-center justify-center">
       {!activeSearch && <span className="text-gray-800">Logo</span>}
@@ -18,7 +17,7 @@ const CenterNav = ({ activeSearch, searchValue, setSearchValue }: Props) => {
         <SearchBar
           searchValue={searchValue}
           activeSearch={activeSearch}
-          setsearchValue={setSearchValue}
+          setsearchValue={setsearchValue}
         />
       </div>
     </div>

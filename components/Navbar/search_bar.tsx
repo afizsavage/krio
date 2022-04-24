@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 
-type Props = {
-  activeSearch: boolean;
-  searchValue: string;
-  setsearchValue: (e: string) => void;
-};
+import { SearchType } from './types';
 
-const SearchBar = ({ activeSearch, searchValue, setsearchValue }: Props) => {
+const SearchBar = ({
+  activeSearch,
+  searchValue,
+  setsearchValue,
+}: SearchType) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleUserInput = (e: any) => {
@@ -22,7 +22,7 @@ const SearchBar = ({ activeSearch, searchValue, setsearchValue }: Props) => {
   return (
     <input
       className="h-full text-gray-700 w-80 outline-none"
-      placeholder="Search for a krio word"
+      placeholder="Do you have a word in mind?"
       ref={inputRef}
       type="text"
       value={searchValue}

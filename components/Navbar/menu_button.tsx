@@ -1,8 +1,8 @@
-type Props = {
-  menuOpen: boolean;
+import { MenuType } from './types';
+
+interface Props extends MenuType {
   activeSearch: boolean;
-  setMenuOpen: (e: boolean) => void;
-};
+}
 
 const MenuButton = ({ menuOpen, activeSearch, setMenuOpen }: Props) => {
   const toggleMenu = () => {

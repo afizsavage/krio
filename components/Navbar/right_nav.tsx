@@ -3,11 +3,17 @@ import { IoMdClose } from 'react-icons/io';
 
 type Props = {
   activeSearch: boolean;
+  menuOpen: boolean;
   setActiveSearch: (e: boolean) => void;
   setSearchValue: (e: string) => void;
 };
 
-const RightNav = ({ activeSearch, setActiveSearch, setSearchValue }: Props) => {
+const RightNav = ({
+  activeSearch,
+  setActiveSearch,
+  setSearchValue,
+  menuOpen,
+}: Props) => {
   const deactivateSearch = () => {
     setActiveSearch(false);
     setSearchValue('');
@@ -18,7 +24,13 @@ const RightNav = ({ activeSearch, setActiveSearch, setSearchValue }: Props) => {
   };
 
   return (
-    <div className="absolute inset-y-0 right-0 flex items-center static inset-auto pr-0 mr-3">
+    <div
+      className={
+        menuOpen
+          ? 'hidden'
+          : 'absolute inset-y-0 right-0 flex items-center static inset-auto pr-0 mr-3'
+      }
+    >
       <button
         onClick={toggleSearch}
         className="w-10 h-10 flex justify-center items-center"

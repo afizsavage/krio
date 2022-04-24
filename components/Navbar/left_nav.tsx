@@ -1,21 +1,20 @@
 import React from 'react';
 import { BiSearch } from 'react-icons/bi';
 import MenuButton from './menu_button';
+import { MenuType } from './types';
 
-type Props = {
-  menuOpen: boolean;
+interface Props extends MenuType {
   activeSearch: boolean;
-  setMenuOpen: (e: boolean) => void;
-  setSearchValue: (e: string) => void;
-};
+  setsearchValue: (e: string) => void;
+}
 
 const LeftNav = ({
   menuOpen,
   activeSearch,
   setMenuOpen,
-  setSearchValue,
+  setsearchValue,
 }: Props) => {
-  const clearInputField = () => setSearchValue('');
+  const clearInputField = () => setsearchValue('');
 
   return (
     <div className="tMBWrapper ">
