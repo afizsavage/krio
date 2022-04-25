@@ -17,6 +17,7 @@ const Navbar = () => {
           <LeftNav
             menuOpen={menuOpen}
             activeSearch={activeSearch}
+            searchValue={searchValue}
             setMenuOpen={setMenuOpen}
             setsearchValue={setSearchValue}
           />
