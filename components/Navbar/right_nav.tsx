@@ -28,7 +28,7 @@ const RightNav = ({
       className={
         menuOpen
           ? 'hidden'
-          : 'absolute inset-y-0 right-0 flex items-center static inset-auto pr-0 mr-3'
+          : 'absolute inset-y-0 right-0 flex items-center inset-auto pr-0 mr-3'
       }
     >
       <button

@@ -21,7 +21,7 @@ const SearchBar = ({
 
   return (
     <input
-      className="h-full text-gray-700 w-80 outline-none"
+      className="w-full h-full text-gray-700 outline-none"
       placeholder="Do you have a word in mind?"
       ref={inputRef}
       type="text"
