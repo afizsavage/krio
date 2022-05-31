@@ -14,7 +14,7 @@ const SearchBar = ({
   };
 
   useEffect(() => {
-    if (inputRef.current && activeSearch) {
+    if (inputRef.current) {
       inputRef.current.focus();
     }
   }, [activeSearch]);

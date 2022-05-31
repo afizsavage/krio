@@ -7,6 +7,7 @@ import { SearchType } from './types';
 
 interface Props extends SearchType {
   menuOpen: boolean;
+  setActiveSearch: (e: boolean) => void;
 }
 
 const MobileNav = ({
@@ -29,6 +30,7 @@ const MobileNav = ({
         >
           <BiSearch className=" w-6 h-6 text-gray-400" />
         </button>
+
         <SearchBar
           activeSearch={activeSearch}
           searchValue={searchValue}
