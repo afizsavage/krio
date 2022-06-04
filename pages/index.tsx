@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Main from '../components/main';
+import { MainSection } from '../components/Main';
 
 const Home: NextPage = () => {
   return (
@@ -8,9 +8,8 @@ const Home: NextPage = () => {
       <Head>
         <title>Krio Dictionary | Home</title>
         <meta name="description" content="A Krio language web dictionary" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Main />
+      <MainSection />
     </>
   );
 };
